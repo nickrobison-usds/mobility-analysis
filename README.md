@@ -22,7 +22,7 @@ These steps will need to be repeated each time you want to execute an HPC job.
 
 ### Setup python
 
-CADES already has built-in support for anaconda, which makes pythong package management incredibly easy.
+CADES already has built-in support for anaconda, which makes python package management incredibly easy.
 
 You'll first need to load the anaconda module:
 
@@ -81,3 +81,8 @@ You can check the status either via the `squeue` command:
 or by calling the `cluster` object directly.
 
 The code can then be run as normal and when the session exits, it will automatically release the HPC nodes.
+
+In order to share code and data between the various compute nodes you'll need to make sure information is stored on the high performance `Lustre` filesystem.
+The base path is: `/lustre/or-hydra/cades-birthright/<username>`.
+
+The easiest way to transfer data to the cluster is via the [Globus](https://globus.org) application, which has an easy web interface for moving data between the cluster and your local machine.
